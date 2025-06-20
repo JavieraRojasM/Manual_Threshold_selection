@@ -17,6 +17,7 @@ clc
 clear
 
 % Load data if not already loaded
+    % Example with "Mar0916_1_4min_components.mat"
 load('Mar0916_1_4min_components.mat', 'possible_gics', 'components');
 
 % Copy data into working variables
@@ -140,7 +141,6 @@ while i <= length(good_gics)
 end
 
 %% --- Save Outputs --- %%
-
 save('binary_matrix.mat', 'binary_matrix', 'temp_good_gics', 'thresh');
 disp('All binary traces saved to "binary_matrix.mat"');
 
