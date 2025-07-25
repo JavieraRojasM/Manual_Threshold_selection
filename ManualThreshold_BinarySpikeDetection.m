@@ -122,7 +122,14 @@ while i <= length(good_gics)
     subplot(2,1,1);
     plot(trace);
     hold on;
-    th = yline(threshold, '--r');
+    
+    % % NOTE: For MATLAB R2018b or later, yline(...) can be used instead of line(...)
+    % th = yline(threshold, '--r'); 
+    
+    % For MATLAB R2018a or earlier 
+    x_limits = xlim;
+    th = line(x_limits, [threshold threshold], 'Color', 'r', 'LineStyle', '--');
+
     legend(th, 'Threshold', 'Location', 'best')
     title(['Original Component Trace (Good GIC #' int2str(i) ')']);
     xlabel('x');
